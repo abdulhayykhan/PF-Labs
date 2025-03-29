@@ -1,4 +1,4 @@
-## Object-Oriented Programming (OOP) - Java Practice Programs
+## Object-Oriented Programming (OOP) - Scenario Based Java Practice Programs
 
 ### Scenario 1: Simple Calculator
 **Question:** Write a Java program that takes two numbers and an operator (+, -, *, /) as input and performs the corresponding operation using functions.
@@ -52,6 +52,78 @@ class EvenOddChecker {
 }
 ```
 
+### Scenario 3: Factorial Calculation
+**Question:** Write a Java program to compute the factorial of a number using a loop.
+
+```java
+import java.util.Scanner;
+class Factorial {
+    static long factorial(int num) {
+        long fact = 1;
+        for (int i = 1; i <= num; i++) {
+            fact *= i;
+        }
+        return fact;
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int num = sc.nextInt();
+        System.out.println("Factorial of " + num + " is " + factorial(num));
+        sc.close();
+    }
+}
+```
+
+### Scenario 4: Prime Number Checker
+**Question:** Write a Java program that checks whether a number is prime or not using a function.
+
+```java
+import java.util.Scanner;
+class PrimeChecker {
+    static boolean isPrime(int num) {
+        if (num <= 1) return false;
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) return false;
+        }
+        return true;
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int num = sc.nextInt();
+        System.out.println(num + " is " + (isPrime(num) ? "Prime" : "Not Prime"));
+        sc.close();
+    }
+}
+```
+
+### Scenario 5: Constructor Overloading Example
+**Question:** Create a class "Student" with constructors for different initialization scenarios.
+
+```java
+class Student {
+    String name;
+    int age;
+    Student(String name) {
+        this.name = name;
+        this.age = 18; // Default age
+    }
+    Student(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+    void display() {
+        System.out.println("Name: " + name + ", Age: " + age);
+    }
+    public static void main(String[] args) {
+        Student s1 = new Student("Ali");
+        Student s2 = new Student("Sara", 22);
+        s1.display();
+        s2.display();
+    }
+}
+```
 
 6. **Palindrome Checker**
 ```java
